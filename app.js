@@ -9,7 +9,7 @@ function calculate() {
   document.getElementById('result').innerText = result;
 }
 
-// Эта часть нужна только для тестов (Node.js)
+// Экспорт для тестов (Node.js)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { multiply };
 }
