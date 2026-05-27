@@ -2,14 +2,25 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Калькулятор</title>
-    <script src="app.js" defer></script>
+    <title>Калькулятор SOLID</title>
 </head>
 <body>
-    <h1>Простой калькулятор умножения</h1>
+    <h1>Калькулятор (рефакторинг SOLID)</h1>
     <input type="number" id="a" placeholder="Число A">
     <input type="number" id="b" placeholder="Число B">
-    <button onclick="calculate()">Умножить</button>
+    <br><br>
+    <button onclick="performOperation('multiply')">Умножить</button>
+    <button onclick="performOperation('add')">Сложить</button>
+    <button onclick="performOperation('divide')">Разделить</button>
     <p>Результат: <span id="result">—</span></p>
+
+    <script type="module">
+        import { DOMInputOutput } from './domAdapter.js';
+        import { createController } from './controller.js';
+        
+        const io = new DOMInputOutput();
+        const controller = createController(io);
+        window.performOperation = (op) => controller.performOperation(op);
+    </script>
 </body>
 </html>
