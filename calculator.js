@@ -10,6 +10,7 @@ export function calculate(operation, a, b) {
     return fn(a, b);
 }
 
+// Экспорт для CommonJS (Jest)
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { calculate, operations };
+    module.exports = { calculate, operations };
 }
