@@ -9,3 +9,7 @@ export function calculate(operation, a, b) {
     if (!fn) throw new Error(`Unknown operation: ${operation}`);
     return fn(a, b);
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { calculate, operations };
+}
